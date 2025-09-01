@@ -1,9 +1,30 @@
-# DesafioNLP
+# Trabajo Final de NLP — EmoEvent - Realizado por Gabriel Garcia
 
-El desafío a realizarse consiste en realizar un estudios exploratorio de 3 modelos en la tarea de clasificación de emociones (https://github.com/fmplaza/EmoEvent/tree/master/splits). Este dataset contiene 8409 tweets anotados con una de las siguientes categorías: anger, sadness, joy, disgust, fear, surprise, offensive, other. Además, los tweets están relacionados a eventos particulares encontrados en Twitter.
+**Fecha:** 2025-09-01
 
-Los requerimientos son los siguientes:
-Deben explorar 3 modelos, pueden entrenar los propios (por ejemplo, una Red Neuronal Recurrente o una Sequence-to-Sequence), hacer fine-tuning (por ejemplo de Bert o T5) o usar un modelo ya listo (por ejemplo, GPT-4o). (9 puntos)
-Deben reportar los resultados por cada emoción (categoría) y también realizar un análisis por evento, matriz de confusión entre otras cosas que consideren pertinente. (5 puntos)
-Debe publicar lo desarrollado en un notebook disponible en GitHub. La entrega debe incluir solo el link al repositorio. (3 puntos)
-El notebook debe estar detallado en cada paso. (3 puntos)
+## Objetivo
+
+Clasificar emociones en tweets en español (7 clases: `anger`, `disgust`, `fear`, `joy`, `other`, `sadness`, `surprise`) usando tres enfoques:
+
+- **XLM-RoBERTa-base** (fine-tuning, encoder)
+- **DistilBERT multilingüe** (fine-tuning, encoder)
+- **FLAN-T5-base** (few-shot prompting, generativo)
+
+## Dataset
+
+**EmoEvent (split ES)** — tweets asociados a eventos, anotados con una de 7 emociones.
+Fuente: https://github.com/fmplaza/EmoEvent/tree/master/splits/es
+
+## EDA (vista rápida)
+
+![EDA Panel](results/eda/EDA_panel.png)
+
+## Resultados
+
+| Modelo | Tipo | Parámetros | Accuracy | Macro F1 | Weighted F1 |
+| --- | --- | --- | --- | --- | --- |
+| DistilBERT-multilingual | Fine-tuning (Encoder) | 66M | 0.3756 | 0.1617 | 0.3556 |
+| XLM-RoBERTa-base | Fine-tuning (Encoder) | 278M | 0.3617 | 0.1477 | 0.3437 |
+| FLAN-T5-base | Few-shot (Generativo) | 248M | 0.4789 | 0.1025 | 0.3289 |
+
+_Fuente de la tabla: `results/final_comparison.csv`_

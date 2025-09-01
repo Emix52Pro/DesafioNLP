@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "models": [
+    "xlm-roberta-base (fine-tuned)",
+    "distilbert-base-multilingual-cased (fine-tuned)",
+    "google/flan-t5-base (few-shot)"
+  ],
+  "preprocessing": "URL, user mentions, hashtag normalization",
+  "evaluation_metrics": [
+    "accuracy",
+    "macro_f1",
+    "weighted_f1"
+  ],
+  "dataset_source": "https://github.com/fmplaza/EmoEvent/tree/master/splits/es"
+}

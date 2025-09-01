@@ -1,0 +1,8 @@
+total_samples: 8223
+train_samples: 5723
+dev_samples: 844
+test_samples: 1656
+unique_emotions: 7
+unique_events: 8
+avg_tweet_length: 150.88939367464616
+class_imbalance_std: 16.85149246307064
