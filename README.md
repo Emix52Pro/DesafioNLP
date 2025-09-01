@@ -19,6 +19,10 @@ Fuente: https://github.com/fmplaza/EmoEvent/tree/master/splits/es
 
 ![EDA Panel](results/eda/EDA_panel.png)
 
+## Comparación Gráfica de los Modelos
+
+![Results Panel](results/resultadosmodelos.png)
+
 ## Resultados
 
 | Modelo | Tipo | Parámetros | Accuracy | Macro F1 | Weighted F1 |
